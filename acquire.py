@@ -31,7 +31,7 @@ def scrape_codeup():
 
 # inshorts.com scraping functions
 def parse_shorts(short):
-     '''
+    '''
     This function takes the information scraped from shorts page and return a dataframe with:
     title, date, tags and content of each article 
     '''
@@ -50,7 +50,7 @@ def scrape_tech_shorts():
     response = get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
     shorts = soup.select('.news-card')
-    df = pd.DataFrame([parse_shorts(short) for short in news])
+    df = pd.DataFrame([parse_shorts(short) for short in shorts])
     return df
 
 def scrape_sports_shorts():
@@ -61,7 +61,7 @@ def scrape_sports_shorts():
     response = get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
     shorts = soup.select('.news-card')
-    df = pd.DataFrame([parse_shorts(short) for short in news])
+    df = pd.DataFrame([parse_shorts(short) for short in shorts])
     return df
 
 def scrape_entertainment_shorts():
@@ -72,7 +72,7 @@ def scrape_entertainment_shorts():
     response = get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
     shorts = soup.select('.news-card')
-    df = pd.DataFrame([parse_shorts(short) for short in news])
+    df = pd.DataFrame([parse_shorts(short) for short in shorts])
     return df
 
 def scrape_busines_shorts():
@@ -83,5 +83,5 @@ def scrape_busines_shorts():
     response = get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
     shorts = soup.select('.news-card')
-    df = pd.DataFrame([parse_shorts(short) for short in news])
+    df = pd.DataFrame([parse_shorts(short) for short in shorts])
     return df
